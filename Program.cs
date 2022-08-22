@@ -32,7 +32,18 @@ namespace TextEditor
 
         static void Abrir()
         {
+            System.Console.WriteLine("Qual o caminho do arquivo? ");
+            string path = Console.ReadLine();
 
+            using (var file = new StreamReader(path))
+            {
+                string text = file.ReadToEnd();
+                System.Console.WriteLine(text);
+            }
+
+            System.Console.WriteLine(" ");
+            Console.ReadLine();
+            Menu();
         }
 
         static void Editar()
